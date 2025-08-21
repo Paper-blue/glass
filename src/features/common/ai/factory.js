@@ -57,6 +57,18 @@ const PROVIDERS = {
       ],
       sttModels: [],
   },
+  'cerebras': {
+      name: 'Cerebras',
+      handler: () => require("./providers/cerebras"),
+      llmModels: [
+          { id: 'llama-3.1-8b-instruct', name: 'Llama 3.1 8B Instruct (Cerebras)' },
+          { id: 'llama-3.1-70b-instruct', name: 'Llama 3.1 70B Instruct (Cerebras)' },
+          { id: 'qwen3-7b-instruct', name: 'Qwen3 7B Instruct (Cerebras)' },
+          { id: 'qwen3-32b-instruct', name: 'Qwen3 32B Instruct (Cerebras)' },
+          { id: 'qwen-3-235b-a22b-instruct-2507', name: 'Qwen3 235B Instruct 2507 (Cerebras)' },
+      ],
+      sttModels: [],
+  },
   'deepgram': {
     name: 'Deepgram',
     handler: () => require("./providers/deepgram"),
@@ -158,6 +170,7 @@ function getProviderClass(providerId) {
         'gemini': 'GeminiProvider',
         'deepgram': 'DeepgramProvider',
         'ollama': 'OllamaProvider',
+        'cerebras': 'CerebrasProvider',
         'whisper': 'WhisperProvider'
     };
     
